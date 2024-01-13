@@ -162,7 +162,38 @@
                 int firstNumb = lastNumb % 10000000;
                 return firstNumb;
             }
+            {
+                //verilmiş 4 reqemli ededin tersine duzub axirina ve evveline 8 artir
+                Console.Write("Enter a 4-digit number: ");
+                int number6 = int.Parse(Console.ReadLine());
 
+
+                if (number6 >= 1000 && number6 <= 9999)
+                {
+                    int reversed = ReversedNumber(number6);
+                    Console.WriteLine($"The new number is:{reversed}");
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a 4-digit number.");
+                }
+              
+            }
+            static int ReversedNumber(int num6)
+            {
+                int reversed = 0;
+                while (num6 > 0)
+                {
+                    int remainder = num6 % 10;
+                    reversed = reversed * 10 + remainder;
+                    num6 /= 10;
+                }
+                reversed = reversed * 10 + 8;
+                return reversed;
+            }//yeniden bax
+            {
+                //verilmiş ededdin axirdan 3-cu reqemi ile sonuncu reqeminin cemini tap  
+            }
         }
     }
 }
