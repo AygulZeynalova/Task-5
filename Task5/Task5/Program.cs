@@ -1,4 +1,6 @@
-﻿namespace Task5
+﻿using System;
+
+namespace Task5
 {
     internal class Program
     {
@@ -192,8 +194,32 @@
                 return reversed;
             }//yeniden bax
             {
-                //verilmiş ededdin axirdan 3-cu reqemi ile sonuncu reqeminin cemini tap  
+                //verilmiş ededdin axirdan 3-cu reqemi ile sonuncu reqeminin cemini tap
+                //ədəd verilməyib.5 rəqəmli ədəd ilə yazdım.
+                Console.Write("Enter a 5-digit number:");
+                int number7 = int.Parse(Console.ReadLine());
+                if (number7 >= 10000 && number7 <= 99999)
+                {
+                    int result2 = CreateANewNumber(number7);
+                    Console.WriteLine($"Your result is:{result2}");
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a 5-digit number.");
+                }
+                static int CreateANewNumber(int num7)
+
+                {
+                    int thirdFromTheEnd = (num7 / 100) % 10;
+                    int lastDigit = num7 % 10;
+                    int result2 = thirdFromTheEnd + lastDigit;
+
+                    return result2;
+                }
+
             }
+           
+            
         }
     }
 }
