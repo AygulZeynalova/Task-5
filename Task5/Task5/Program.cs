@@ -2,36 +2,40 @@
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.ConstrainedExecution;
 using System.Text.RegularExpressions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
+    #region Task 1
 {
     //1) verilmiş 4 reqemli ededin reqemlerinin cemini tap
     Console.Write("Enter a 4-digit number: ");
-    int number = int.Parse(Console.ReadLine());
+int number = int.Parse(Console.ReadLine());
 
 
-    if (number >= 1000 && number <= 9999)
-    {
-        int sum = SumOfDigits(number);
-        Console.WriteLine($"The sum of the digits is: {sum}");
-    }
-    else
-    {
-        Console.WriteLine("Please enter a 4-digit number.");
-    }
+if (number >= 1000 && number <= 9999)
+{
+int sum = SumOfDigits(number);
+Console.WriteLine($"The sum of the digits is: {sum}");
+}
+else
+{
+Console.WriteLine("Please enter a 4-digit number.");
+}
 }
 static int SumOfDigits(int num)
 {
-    int sum = 0;
+int sum = 0;
 
-    while (num > 0)
-    {
-        sum += num % 10;
-        num /= 10;
-    }
-
-    return sum;
+while (num > 0)
+{
+sum += num % 10;
+num /= 10;
 }
 
+return sum;
+} 
+#endregion
+
+    #region Task 2
 {
     // verilmiş 6 reqemli ededin ilk 3 denesinin reqemleri cemi tap: example: 123600= 1+2+3
     Console.Write("Enter a 6-digit number:");
@@ -58,7 +62,10 @@ static int SumOfDigits1(int num1)
         num1 /= 10;
     }
     return sum1;
-}
+} 
+#endregion
+  
+    #region Task 3
 {
     //verilmiş 9 reqemli ededin duz ortaya dushen 3 reqeminin reqemleri cemi
     Console.Write("Enter a 9-digit number:");
@@ -84,8 +91,10 @@ static int SumOfDigits1(int num1)
         return sum2;
     }
 
-}
+} 
+#endregion
 
+    #region Task 4
 {
     //verilmiş 5 reqemli ilk ve son reqemlerinin ceminin kvadrati
     Console.Write("Enter a 5-digit number:");
@@ -112,7 +121,10 @@ static int SumOfDigits3(int num3)
     int sum3 = firstNum + lastNum;
 
     return sum3;
-}
+} 
+#endregion
+
+    #region Task 5
 //verilmiş 6 reqemli ededin 1 ci reqemini hemin ededin axirina at.
 Console.Write("Enter a 6-digit number:");
 int number4 = int.Parse(Console.ReadLine());
@@ -137,7 +149,10 @@ static int FirstDigitToEnd(int num4)
 
     return result;
 
-}
+} 
+#endregion
+
+    #region Task 6
 {
     //verilmiş 8 reqemli ededin ilk I ve axirinci reqemlerini legv et
     Console.Write("Enter an 8-digit number:");
@@ -160,6 +175,9 @@ static int CancelTheFirstAndLastDigits(int num5)
     int firstNumb = lastNumb % 10000000;
     return firstNumb;
 }
+#endregion
+
+    #region Task 7
 {
     //verilmiş 4 reqemli ededin tersine duzub axirina ve evveline 8 artir
     Console.Write("Enter a 4-digit number: ");
@@ -188,7 +206,10 @@ static int ReversedNumber(int num6)
     }
     reversed = reversed * 10 + 8;
     return reversed;
-}//yeniden bax
+}//yeniden bax  
+#endregion
+
+    #region Task 8
 {
     //verilmiş ededdin axirdan 3-cu reqemi ile sonuncu reqeminin cemini tap
     //ədəd verilməyib.5 rəqəmli ədəd ilə yazdım.
@@ -206,7 +227,9 @@ static int CreateANewNumber(int num7)
 
     return result2;
 }
+#endregion
 
+    #region Task 9
 {
 // 9 reqemli ededdin tek yerde dayananlardan bir eded duzlet: 132346389=12439
 l8:
@@ -230,8 +253,10 @@ l8:
     }
     Console.WriteLine($"Your new number is:{newNumber8}");
 
-}
+} 
+#endregion
 
+    #region Task 10
 {
 //10) 9 reqemli ededdi tek yerde dayananlardan bir eded duzlet,
 //sonra cut yerde dayanlarinda bir eded duzlet,
@@ -261,10 +286,13 @@ l9:
 
     Console.WriteLine($"Your new odd number is:{newOddNumber}");
     Console.WriteLine($"Your new even number is:{newEvenNumber}");
-    Console.WriteLine($"Your final result is:{finalResult}");
-
+    Console.WriteLine($"Your final result is:{finalResult}"); 
+   
 
 }
+#endregion
+
+    #region Task 11
 
 {
 // 8 reqemli ededin reqemlerini iki -iki qruplashdir.
@@ -298,10 +326,13 @@ l11:
     else
     {
         goto l11;
-    }
+    } 
+    
 
 }
+#endregion
 
+    #region Task 12
 {
 //12) 2 dene 5 reqemli eded daxil et.
 //I ededin reqemleri ceminin usutne
@@ -357,9 +388,13 @@ l12_2:
 
         return sumRes;
 
-    }
+    } 
+    
 
 }
+#endregion
+
+    #region Task 13
 {
     //13) 3 dene 5 reqemli eded var.
     //Her bir  ededin ilk ve son reqemlerininden 1 eded duzlet. Alinan neticeleri topla
@@ -419,8 +454,10 @@ l13_3:
 
         return firstDigit * 10 + lastDigit;
 
-    }
+    } 
+    #endregion
 
+    #region Task 14
     {
     /*
      14) 4 dene eded daxil et. 
@@ -436,7 +473,7 @@ Neticeden 18% cix.
         Console.Write("Enter your first 6-digit number:");
         int first6Digit = int.Parse(Console.ReadLine());
 
-        
+
 
         if (!(first6Digit >= 100000 && first6Digit <= 999999))
         {
@@ -470,13 +507,13 @@ Neticeden 18% cix.
             Console.WriteLine("Please enter a 7-digit number.");
             goto l___14;
         }
-        int finalSum14 = NewNumbersSum(first6Digit, second6Digit, third6Digit,fourth7Digit);
+        int finalSum14 = NewNumbersSum(first6Digit, second6Digit, third6Digit, fourth7Digit);
 
         Console.WriteLine($"Your final result is:{finalSum14}");
 
 
 
-        static int NewNumbersSum(int first6Digit, int second6Digit, int third6Digit,int fourth7Digit)
+        static int NewNumbersSum(int first6Digit, int second6Digit, int third6Digit, int fourth7Digit)
         {
             int sum14 = CountFirst3Numbers(first6Digit) + CountFirst3Numbers(second6Digit) + CountFirst3Numbers(third6Digit);
             int sevenDigitNum = Last4DigitsOf7(fourth7Digit);
@@ -509,43 +546,152 @@ Neticeden 18% cix.
             int fifthtDigitOf7 = (seventhNum / 10000) % 10;
             int sixthtDigitOf7 = (seventhNum / 100000) % 10;
             int seventhDigitOf7 = (seventhNum / 1000000) % 10;
-            
-            return (fourthtDigitOf7*1000)+(fifthtDigitOf7*100)+(sixthtDigitOf7*10)+seventhDigitOf7;
+
+            return (fourthtDigitOf7 * 1000) + (fifthtDigitOf7 * 100) + (sixthtDigitOf7 * 10) + seventhDigitOf7;
 
         }
         static int First3NumbersOf7(int seventhNum)
         {
-            int firstDigitOf7=seventhNum % 10;
-            int secondDigitOf7=(seventhNum/100) % 10;
+            int firstDigitOf7 = seventhNum % 10;
+            int secondDigitOf7 = (seventhNum / 100) % 10;
             int thirdDigitof7 = (seventhNum / 1000) % 10;
 
             return firstDigitOf7 * secondDigitOf7 * thirdDigitof7;
-        }
-
-
-    }
-
-    {
-        /*
-         5 dene eded daxil et. Bunlarda 2 denesi 3 reqemli. 
-        2 denesi 6 reqemli . 
-        1 denesi 7 reqemli olsun.
-     3 reqemli ededlerin cemini tap 
-        cavabin axirdan 2 denesini kvadratini tap.
-     Sonra alinan cavabin ustune 3 reqemli ededlerin bir birine yapishdirilmasindan sonra alinan ededei gel.
-     Cavabdan 7 reqemli ededin son 5 reqemini cix.
-     Alinan neticenin uzerine 6 reqemlilerin ceminden alinan cavabin axirinci 3 dene ededini gel.
-     Neticenin uzerine 7 reqemli ededin reqemleri ceminin tersine duzulmesinden alinan cavabi gel.
-     Cavabin axirina 11 artir.
-     Sonra 7 reqemli ededin tek yerde dayan reqemlerinde alinan ededi cix.
-     Cavabin axirdan II reqemi ile axirinci reqemin arasina 88 elave et.\
+        } 
         
-         */
 
 
     }
+    #endregion
 
+    #region Task 15
+    {
+    /*
+     5 dene eded daxil et. Bunlarda 2 denesi 3 reqemli. 
+    2 denesi 6 reqemli . 
+    1 denesi 7 reqemli olsun.
+ 3 reqemli ededlerin cemini tap 
+    cavabin axirdan 2 denesini kvadratini tap.
+ Sonra alinan cavabin ustune 3 reqemli ededlerin bir birine yapishdirilmasindan sonra alinan ededei gel.
+ Cavabdan 7 reqemli ededin son 5 reqemini cix.
+ Alinan neticenin uzerine 6 reqemlilerin ceminden alinan cavabin axirinci 3 dene ededini gel.
+ Neticenin uzerine 7 reqemli ededin reqemleri ceminin tersine duzulmesinden alinan cavabi gel.
+ Cavabin axirina 11 artir.
+ Sonra 7 reqemli ededin tek yerde dayan reqemlerinde alinan ededi cix.
+ Cavabin axirdan II reqemi ile axirinci reqemin arasina 88 elave et.\
+
+     */
+    l15:
+        Console.Write("Enter your first 3-digit number:");
+        double number1_15 = double.Parse(Console.ReadLine());
+
+        if (!(number1_15 >= 100 && number1_15 <= 999))
+        {
+            Console.WriteLine("Please enter a 3-digit number.");
+            goto l15;
+        }
+    l15_2:
+        Console.Write("Enter your second 3-digit number:");
+        double number2_15 = double.Parse(Console.ReadLine());
+
+        if (!(number2_15 >= 100 && number2_15 <= 999))
+        {
+            Console.WriteLine("Please enter a 3-digit number.");
+            goto l15_2;
+        }
+    l15_3:
+        Console.Write("Enter your first 6-digit number:");
+        double number3_15 = double.Parse(Console.ReadLine());
+        if (!(number3_15 >= 100000 && number3_15 <= 999999))
+        {
+            Console.WriteLine("Please enter a 6-digit number.");
+            goto l15_3;
+        }
+    l15_4:
+        Console.Write("Enter your second 6-digit number:");
+        double number4_15 = double.Parse(Console.ReadLine());
+        if (!(number4_15 >= 100000 && number4_15 <= 999999))
+        {
+            Console.WriteLine("Please enter a 6-digit number.");
+            goto l15_4;
+        }
+    l15_5:
+        Console.Write("Enter your first 7-digit number:");
+        double number5_15 = double.Parse(Console.ReadLine());
+        if (!(number5_15 >= 1000000 && number5_15 <= 9999999))
+        {
+            Console.WriteLine("Please enter a 7-digit number.");
+            goto l15_5;
+        }
+        double finalSum15 = OperationsOnNumbers(number1_15, number2_15, number3_15, number4_15, number5_15);
+
+        Console.WriteLine($"Your final result is:{finalSum15}");
+
+        static double OperationsOnNumbers(double number1_15, double number2_15, double number3_15, double number4_15, double number5_15)
+        {
+            double sumOf3 = number1_15 + number2_15;
+            double sumOf3LastDigit = sumOf3 % 10;
+            double squareOf3LastDigit = Math.Pow(sumOf3LastDigit, 2);
+            double pairedNums3 = number1_15 * 100000 + number2_15;
+            double lastDigitsOf7 = number5_15 % 100000;
+            double newNum7 = pairedNums3 - lastDigitsOf7;
+            double sumOf6 = number3_15 + number4_15;
+            double last3DigitsOf6 = sumOf6 % 1000;
+            double newNum6 = newNum7 + last3DigitsOf6;
+
+            double sumOf7 = 0;
+            double reversedSum = 0;
+
+            while (number5_15 > 0)
+            {
+                sumOf7 += number5_15 % 10;
+                number5_15 /= 10;
+            }
+            while (sumOf7 > 0)
+            {
+                reversedSum = reversedSum * 10 + sumOf7 % 10;
+                sumOf7 /= 10;
+            }
+
+            double reversedAnd6DigitNum = newNum6 + reversedSum;
+
+            double atTheEnd11 = reversedAnd6DigitNum * 100 + 11;
+
+            double position = 0;
+            double result15 = 0;
+            while (number5_15 > 0)
+            {
+                if (position % 2 == 0)
+                {
+                    result15 = result15 * 10 + number5_15 % 10;
+                }
+                position++;
+                number5_15 /= 10;
+            }
+            double reversedResult = 0;
+            while (result15 > 0)
+            {
+                reversedResult = reversedResult * 10 + result15 % 10;
+                result15 /= 10;
+
+            }
+
+            double substractOdd7Nums = atTheEnd11 - reversedResult;
+
+            double lastDigitOfSubstract = substractOdd7Nums % 10;
+            double remainingNumbers = substractOdd7Nums / 10;
+            return remainingNumbers * 1000 + 88 * 10 + lastDigitOfSubstract;
+
+            //Bəzi şərtləri tam anlamadım.
+
+
+
+
+        }
+    } 
+    
 }
+#endregion
 
 
 
